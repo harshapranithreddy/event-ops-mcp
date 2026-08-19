@@ -34,6 +34,24 @@ import sys
 
 from data_loader import get_data
 
+
+
+def _load_dotenv():
+    """Load KEY=value lines from a local .env file into the environment."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(here, ".env")
+    if not os.path.exists(path):
+        return
+    for line in open(path):
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
+_load_dotenv()
+
 DEFAULT_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5")
 
 
