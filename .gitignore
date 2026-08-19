@@ -1,0 +1,18 @@
+# Real attendee data: NEVER commit. Contains personal information
+# (names, emails, phone numbers). Only the CSV files are ignored;
+# the folder and its README placeholder are kept.
+data/*.csv
+!data/README.txt
+
+# Secrets
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store

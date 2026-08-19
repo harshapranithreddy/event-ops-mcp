@@ -1,0 +1,4 @@
+mcp>=1.9,<2
+anthropic>=0.40.0
+pandas>=2.0.0
+faker>=25.0.0
